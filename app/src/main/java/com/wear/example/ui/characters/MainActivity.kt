@@ -1,11 +1,13 @@
 package com.wear.example.ui.characters
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wear.example.BuildConfig
 import com.wear.example.databinding.ActivityMainBinding
 import com.wear.example.ui.characters.recycler.RecyclerAdapter
 
@@ -41,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         binding.swipeToRefresh.setOnRefreshListener {
             viewModel.getDataCharacters()
         }
+
+        Log.d("EXA_DELTA", BuildConfig.THEME_DARK.toString())
 
     }
 }

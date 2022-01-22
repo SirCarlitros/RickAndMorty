@@ -10,7 +10,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module(includes = [BindModule::class])
-object MainModule {
+class MainModule {
 
     @Provides
     fun provideDataSource(): RickAndMortyDataSource = RickAndMortyDataSourceImpl()

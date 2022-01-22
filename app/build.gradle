@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+
     compileSdk 32
 
     defaultConfig {
@@ -21,10 +22,32 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField("String", "DELTA", '\"DElta\"')
+            buildConfigField("String", "BUILD_TIME", "\"ZP\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug{
+            buildConfigField("String", "BUILD_TIME", "\"0\"")
+        }
     }
+
+    flavorDimensions "theme"
+
+    productFlavors {
+        dark{
+            buildConfigField("boolean", "THEME_DARK", "true")
+            dimension "theme"
+            applicationIdSuffix ".dark"
+            manifestPlaceholders = [appTheme: "@style/myThemeDark"]
+        }
+        light{
+            buildConfigField("boolean", "THEME_DARK", "false")
+            dimension "theme"
+            applicationIdSuffix ".light"
+            manifestPlaceholders = [appTheme: "@style/myThemeLight"]
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

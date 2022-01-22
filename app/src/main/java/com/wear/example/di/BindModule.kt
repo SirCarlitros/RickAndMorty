@@ -6,8 +6,8 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-interface BindModule {
+abstract class BindModule {
 
     @Binds
-    fun asd(rickAndMortyRepositoryImpl: RickAndMortyRepositoryImpl): RickAndMortyRepository
+    abstract fun asd(rickAndMortyRepositoryImpl: RickAndMortyRepositoryImpl): RickAndMortyRepository
 }
