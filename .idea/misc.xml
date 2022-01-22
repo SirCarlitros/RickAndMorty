@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/item_character.xml" value="0.36666666666666664" />
         <entry key="app/src/dark/res/layout/activity_main.xml" value="0.16510416666666666" />
         <entry key="app/src/light/res/layout/activity_main.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/background_place_holder.xml" value="0.19907407407407407" />
