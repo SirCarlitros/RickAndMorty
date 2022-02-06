@@ -4,5 +4,5 @@ import com.wear.example.data.model.ApiResponseRickAndMorty
 
 interface RickAndMortyDataSource {
 
-    suspend fun getCharacters(page: Int?): ApiResponseRickAndMorty?
+    suspend fun getCharacters(): ApiResponseRickAndMorty?
 }

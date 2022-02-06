@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/item_character.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/dark/res/layout/activity_main.xml" value="0.3484375" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/light/res/layout/activity_main.xml" value="0.75" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/background_dialog_fragment_character.xml" value="0.39" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/background_place_holder.xml" value="0.403125" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/activity_splash.xml" value="0.39010416666666664" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/dialog_fragment_character.xml" value="0.33" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters.xml" value="0.25" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_favorite_characters.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/item_character.xml" value="0.531047265987025" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/item_character_place_holder.xml" value="0.39010416666666664" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/textt.xml" value="0.39010416666666664" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RickAndMorty/app/src/main/res/menu/navigation_bottom_items.xml" value="0.5541666666666667" />
         <entry key="app/src/dark/res/layout/activity_main.xml" value="0.16510416666666666" />
         <entry key="app/src/light/res/layout/activity_main.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/background_place_holder.xml" value="0.19907407407407407" />

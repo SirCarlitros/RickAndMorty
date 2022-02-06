@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialog_fragment_character">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_top_dialog_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_middle_dialog_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_left_dialog_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_right_dialog_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guide_top_dialog_fragment">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image_character_dialog_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:srcCompat="@drawable/ic_round_character" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/guide_middle_dialog_fragment"
+            tools:text="Name: Rick Sanchez" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_status_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_character_dialog_fragment"
+            tools:text="Status: Alive" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_species_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status_character_dialog_fragment"
+            tools:text="Species: Human" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_gender_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_species_character_dialog_fragment"
+            tools:text="Gender: Male" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_origin_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender_character_dialog_fragment"
+            tools:text="Origin: Earth" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_episodes_character_dialog_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_origin_character_dialog_fragment"
+            tools:text="Episodes: 10" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_close_character_dialog_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            app:layout_constraintTop_toBottomOf="@id/tv_episodes_character_dialog_fragment"
+            app:layout_constraintStart_toStartOf="@id/guide_left_dialog_fragment"
+            app:layout_constraintEnd_toEndOf="@id/guide_right_dialog_fragment"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

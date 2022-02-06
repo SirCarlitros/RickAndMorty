@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name"><![CDATA[Rick & Morty]]></string>
     <string name="rick_morty"><![CDATA[Rick & Morty]]></string>
+    <string name="base_url_rick_and_morty">https://rickandmortyapi.com/api/character/</string>
+    <string name="name_character_dialog_fragment">Name: %1$s</string>
+    <string name="status_character_dialog_fragment">Status: %1$s</string>
+    <string name="species_character_dialog_fragment">Species: %1$s</string>
+    <string name="gender_character_dialog_fragment">Gender: %1$s</string>
+    <string name="origin_character_dialog_fragment">Origin: %1$s</string>
+    <string name="episodes_character_dialog_fragment">Episodes: %1$d</string>
 </resources>

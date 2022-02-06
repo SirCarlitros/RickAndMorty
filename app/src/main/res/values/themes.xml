@@ -16,10 +16,12 @@
 
     <style name="myThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:textColor">@android:color/black</item>
+        <item name="fontFamily">@font/architects_daughter</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/color_background</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="myThemeDark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
