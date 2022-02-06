@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.wear.example.applicationComponent
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        application.applicationComponent.activityComponentFactory().create(this)
+        application.applicationComponent.activityComponentBuilder().activity(this).build()
             .injectSplashActivity(this)
 
         //DaggerActivityComponent.factory().create(this, this.application.applicationComponent).injectSplashActivity(this)
@@ -30,7 +31,6 @@ class SplashActivity : AppCompatActivity() {
         )
         window.statusBarColor = Color.TRANSPARENT
 
-
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
@@ -38,4 +38,5 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }, 3_000L)
     }
+
 }

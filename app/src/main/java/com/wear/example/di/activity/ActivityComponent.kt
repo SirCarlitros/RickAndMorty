@@ -21,7 +21,8 @@ interface ActivityComponent {
     fun fragmentComponentFactory(): FragmentComponent
 
     @Subcomponent.Builder
-    interface Factory {
-        fun activity(@BindsInstance activity: Activity): ActivityComponent
+    interface Builder {
+        fun activity(@BindsInstance activity: Activity): Builder
+        fun build(): ActivityComponent
     }
 }

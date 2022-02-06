@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         mainActivityComponent =
-            application.applicationComponent.activityComponentFactory().create(this)
+            application.applicationComponent.activityComponentBuilder().activity(this).build()
         mainActivityComponent.injectMainActivity(this)
 
         setContentView(binding.root)

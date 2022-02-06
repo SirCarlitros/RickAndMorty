@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 interface ApplicationComponent {
 
     //fun retrofit(): Retrofit
-    fun activityComponentFactory(): ActivityComponent.Factory
+    fun activityComponentBuilder(): ActivityComponent.Builder
 
     @Component.Factory
     interface Builder {
