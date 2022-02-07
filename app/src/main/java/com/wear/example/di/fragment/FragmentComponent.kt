@@ -1,14 +1,9 @@
 package com.wear.example.di.fragment
 
-import android.app.Activity
-import com.wear.example.di.activity.ActivityComponent
-import com.wear.example.di.app.ApplicationComponent
 import com.wear.example.di.scopes.FragmentScope
 import com.wear.example.ui.characters.CharacterFragment
 import com.wear.example.ui.characters.ViewModelFactory
 import com.wear.example.ui.characters.dialog_fragment.CharacterDialogFragment
-import dagger.BindsInstance
-import dagger.Component
 import dagger.Subcomponent
 
 @Subcomponent(
