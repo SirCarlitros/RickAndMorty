@@ -1,16 +1,12 @@
 package com.wear.example.di.app
 
-import com.wear.example.di.scopes.ApplicationScope
+import com.example.networking.NetworkingModule
 import dagger.Module
-import dagger.Provides
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-@Module
+@Module(includes = [NetworkingModule::class])
 class NetworkModule {
 
+/*
     @Provides
     fun provideInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
@@ -29,5 +25,6 @@ class NetworkModule {
         return Retrofit.Builder().baseUrl("https://rickandmortyapi.com/api/character/")
             .addConverterFactory(GsonConverterFactory.create()).client(client).build()
     }
+*/
 
 }

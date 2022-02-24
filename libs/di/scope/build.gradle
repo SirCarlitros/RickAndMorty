@@ -4,7 +4,7 @@ plugins {
     id 'kotlin-kapt'
 }
 
-apply from: '../../version.gradle'
+apply from: '../../../version.gradle'
 
 android {
     compileSdk 32
@@ -43,17 +43,4 @@ dependencies {
 
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
-
-    //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrifit_version"
-
-    //Interceptor
-    implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
-
-    //Gson
-    implementation "com.google.code.gson:gson:$gson_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrifit_version"
-
-    //Dagger Scopes
-    implementation project(path: ':libs:di:scope')
 }

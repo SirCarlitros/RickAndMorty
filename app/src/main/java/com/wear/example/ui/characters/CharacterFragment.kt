@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.scope.FragmentScope
 import com.wear.example.databinding.FragmentCharactersBinding
 import com.wear.example.di.NumberTwo
 import com.wear.example.di.fragment.FragmentComponent
-import com.wear.example.di.scopes.FragmentScope
 import com.wear.example.ui.activityComp
 import com.wear.example.ui.characters.dialog_fragment.CharacterDialogFragment
 import com.wear.example.ui.characters.recycler.RecyclerAdapter

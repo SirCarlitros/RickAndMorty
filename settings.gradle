@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Rick & Morty"
 include ':app'
 include ':libs:networking'
+include ':libs:di:scope'

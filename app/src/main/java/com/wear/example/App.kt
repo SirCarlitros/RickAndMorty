@@ -5,6 +5,8 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import com.wear.example.di.app.ApplicationComponent
 import com.wear.example.di.app.DaggerApplicationComponent
+import com.wear.example.network.NetworkingConfigurationImpl
+import com.wear.example.ui.InterTestImpl
 
 class App : Application() {
 
@@ -17,7 +19,9 @@ class App : Application() {
     override fun onCreate() {
         app = this
 
-        applicationComponent = DaggerApplicationComponent.factory().create(this)
+        applicationComponent =
+            DaggerApplicationComponent.factory()
+                .create(this)
 
         AppCompatDelegate.setDefaultNightMode(
             if (BuildConfig.THEME_DARK) AppCompatDelegate.MODE_NIGHT_YES

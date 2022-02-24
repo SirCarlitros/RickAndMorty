@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libs" />
+            <option value="$PROJECT_DIR$/libs/di" />
+            <option value="$PROJECT_DIR$/libs/di/scope" />
             <option value="$PROJECT_DIR$/libs/networking" />
           </set>
         </option>

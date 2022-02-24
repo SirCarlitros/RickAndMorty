@@ -1,6 +1,6 @@
 package com.wear.example.di.fragment
 
-import com.wear.example.di.scopes.FragmentScope
+import com.example.scope.FragmentScope
 import com.wear.example.ui.characters.CharacterFragment
 import com.wear.example.ui.characters.ViewModelFactory
 import com.wear.example.ui.characters.dialog_fragment.CharacterDialogFragment

@@ -1,9 +1,9 @@
 package com.wear.example.di.activity
 
 import android.app.Activity
+import com.example.scope.ActivityScope
 import com.wear.example.databinding.ActivityMainBinding
 import com.wear.example.databinding.ActivitySplashBinding
-import com.wear.example.di.scopes.ScopeActivity
 import com.wear.example.ui.MainActivity
 import com.wear.example.ui.splash.SplashActivity
 import dagger.Module
@@ -14,15 +14,17 @@ class ActivityModule {
 
 
     @Module
-    class View{
+    class View {
 
         @Provides
-        @ScopeActivity
-        fun provideSplashBinder(activity: Activity) = ActivitySplashBinding.inflate((activity as SplashActivity).layoutInflater)
+        @ActivityScope
+        fun provideSplashBinder(activity: Activity) =
+            ActivitySplashBinding.inflate((activity as SplashActivity).layoutInflater)
 
         @Provides
-        @ScopeActivity
-        fun provideMainBinder(activity: Activity) = ActivityMainBinding.inflate((activity as MainActivity).layoutInflater)
+        @ActivityScope
+        fun provideMainBinder(activity: Activity) =
+            ActivityMainBinding.inflate((activity as MainActivity).layoutInflater)
     }
 
 

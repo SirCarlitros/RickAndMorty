@@ -1,8 +1,8 @@
 package com.wear.example.data.repository
 
 import android.util.Log
+import com.example.scope.FragmentScope
 import com.wear.example.data.model.ApiResponseRickAndMorty
-import com.wear.example.di.scopes.FragmentScope
 import com.wear.example.model.data_source.RickAndMortyDataSource
 import com.wear.example.model.repository.RickAndMortyRepository
 import java.util.*
@@ -17,6 +17,6 @@ class RickAndMortyRepositoryImpl @Inject constructor() :
 
     override suspend fun getCharacters(): ApiResponseRickAndMorty? {
         Log.d("REPOSITORY_IMPL", "--> $this")
-        return if(dataSourceImpl.isPresent) dataSourceImpl.get().getCharacters() else null
+        return if (dataSourceImpl.isPresent) dataSourceImpl.get().getCharacters() else null
     }
 }

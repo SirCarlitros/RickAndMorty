@@ -2,10 +2,10 @@ package com.wear.example.data.data_source
 
 import android.content.Context
 import android.util.Log
+import com.example.scope.FragmentScope
 import com.wear.example.R
 import com.wear.example.data.model.ApiResponseRickAndMorty
 import com.wear.example.di.NumberOne
-import com.wear.example.di.scopes.FragmentScope
 import com.wear.example.model.data_source.RickAndMortyDataSource
 import com.wear.example.network.Api
 import kotlinx.coroutines.delay
