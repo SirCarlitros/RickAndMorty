@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDialogFragment
 import com.bumptech.glide.Glide
+import com.wear.example.App
 import com.wear.example.R
 import com.wear.example.data.model.ResultsItem
 import com.wear.example.databinding.DialogFragmentCharacterBinding
@@ -44,7 +45,7 @@ class CharacterDialogFragment(private val resultItem: ResultsItem) : AppCompatDi
 
         Glide.with(view.context).load(resultItem.image.orEmpty())
             .placeholder(R.drawable.ic_round_character).into(binding.ivImageCharacterDialogFragment)
-        binding.tvNameCharacterDialogFragment.text = view.context.getString(
+        binding.tvNameCharacterDialogFragment.text = App.applicationComponent.getApplication().getString(
             R.string.name_character_dialog_fragment,
             resultItem.name.orEmpty()
         )

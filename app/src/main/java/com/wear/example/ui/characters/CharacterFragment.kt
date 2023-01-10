@@ -20,8 +20,7 @@ import com.wear.example.ui.characters.recycler.RecyclerAdapter
 import javax.inject.Inject
 import javax.inject.Provider
 
-@FragmentScope
-class CharacterFragment @Inject constructor() : Fragment(),
+class CharacterFragment : Fragment(),
     CharacterDialogFragment.ListenerDialogFragment {
 
     companion object {
@@ -41,9 +40,10 @@ class CharacterFragment @Inject constructor() : Fragment(),
     }
 
     override fun onAttach(context: Context) {
+        Log.d("CHARACTER_FRAGMENT_1", "$this")
         Log.d("ATTACHED_FRAGMENT", "ATTACHED_FRAGMENT")
         with(context) {
-            fragmentComponent = activityComp.fragmentComponentFactory()
+            fragmentComponent = activityComp.fragmentComponentFactory().create(this@CharacterFragment)
         }
         super.onAttach(context)
     }
@@ -100,7 +100,7 @@ class CharacterFragment @Inject constructor() : Fragment(),
 
     private fun showLoadingLayout(show: Boolean) {
 
-        binding.recyclerViewCharacters.visibility = if (show) View.GONE else View.VISIBLE
+        binding.swipeToRefresh.visibility = if (show) View.GONE else View.VISIBLE
         binding.fakeShimmer.visibility = if (show) View.VISIBLE else View.GONE
     }
 

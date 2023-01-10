@@ -14,6 +14,8 @@ interface ApplicationComponent {
 
     //fun retrofit(): Retrofit
     fun activityComponentBuilder(): ActivityComponent.Builder
+    fun getApplication(): Application
+
 
     @Component.Factory
     interface Builder {

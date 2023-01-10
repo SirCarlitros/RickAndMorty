@@ -10,4 +10,9 @@
     <color name="color_background">#EAE9E9</color>
     <color name="color_background_night">#101010</color>
 
+
+    <color name="color_background_item_character">#03254C</color>
+    <color name="color_background_item_character_contrast">#1167b1</color>
+    <color name="color_background_item_character_container">#3B9Af0</color>
+
 </resources>

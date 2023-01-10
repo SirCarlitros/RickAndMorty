@@ -2,24 +2,26 @@ package com.wear.example
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import com.wear.example.di.app.ApplicationComponent
 import com.wear.example.di.app.DaggerApplicationComponent
-import com.wear.example.network.NetworkingConfigurationImpl
-import com.wear.example.ui.InterTestImpl
+import com.wear.example.pruebas.AClass
+import com.wear.example.pruebas.BClass
+import com.wear.example.pruebas.CClass
+import com.wear.example.pruebas.DClass
 
 class App : Application() {
 
     companion object {
         lateinit var app: Application
+        lateinit var applicationComponent: ApplicationComponent
     }
-
-    lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
         app = this
 
-        applicationComponent =
+        Companion.applicationComponent =
             DaggerApplicationComponent.factory()
                 .create(this)
 
@@ -31,4 +33,4 @@ class App : Application() {
     }
 }
 
-val Context.applicationComponent: ApplicationComponent get() = (applicationContext as App).applicationComponent
+val Context.applicationComponent: ApplicationComponent get() = App.applicationComponent

@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,10 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        application.applicationComponent.activityComponentBuilder().activity(this).build()
+        application.applicationComponent
+            .activityComponentBuilder()
+            .activity(this)
+            .build()
             .injectSplashActivity(this)
 
         //DaggerActivityComponent.factory().create(this, this.application.applicationComponent).injectSplashActivity(this)
@@ -32,6 +36,11 @@ class SplashActivity : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
 
         setContentView(binding.root)
+
+        val lista = mutableListOf(1,2,3)
+        val listab = lista.add(4)
+        Log.d("HOLA","HOLA")
+        print(listab)
 
         Handler(Looper.getMainLooper()).postDelayed({
             Navigation.gotoMainActivity(this)

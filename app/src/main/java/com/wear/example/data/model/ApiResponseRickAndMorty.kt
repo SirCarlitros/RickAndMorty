@@ -24,7 +24,9 @@ data class Info(
 
 	@field:SerializedName("count")
 	val count: Int? = null
-)
+){
+
+}
 
 data class ResultsItem(
 

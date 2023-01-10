@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="3dp">
+    android:layout_marginVertical="3dp"
+    android:background="@color/color_background_item_character_container">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -20,6 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@color/color_background_item_character"
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -34,6 +36,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name_character"
+                android:backgroundTint="@color/color_background_item_character_contrast"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
