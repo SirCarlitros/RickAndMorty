@@ -1,21 +1,23 @@
 package com.example.networking
 
 import android.app.Application
-import com.example.scope.ApplicationScope
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.Cache
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class NetworkingModule {
 
     @Provides
-    @ApplicationScope
+    @Singleton
     fun provideCache(
         application: Application,
         networkingConfiguration: NetworkingConfiguration
@@ -24,19 +26,19 @@ class NetworkingModule {
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     fun provideNetworkInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     fun provideClient(cache: Cache, interceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder().addInterceptor(interceptor).cache(cache).build()
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     fun provideRetrofit(
         client: OkHttpClient,
         networkingConfiguration: NetworkingConfiguration

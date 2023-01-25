@@ -1,39 +1,35 @@
 package com.wear.example.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.wear.example.R
-import com.wear.example.applicationComponent
 import com.wear.example.databinding.ActivityMainBinding
-import com.wear.example.di.activity.ActivityComponent
 import com.wear.example.navigation.Navigation
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
-import okhttp3.internal.wait
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
 
     @Inject
     lateinit var binding: ActivityMainBinding
 
+    private val mainViewModel: MainViewModel by viewModels()
+
     private lateinit var navController: NavController
 
-    lateinit var mainActivityComponent: ActivityComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mainActivityComponent =
-            application.applicationComponent.activityComponentBuilder().activity(this).build()
-
-        mainActivityComponent.injectMainActivity(this)
-
         setContentView(binding.root)
+
+
 
         navController = findNavController(R.id.nav_host_fragment)
 
@@ -44,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.action_favorite -> {
+                    Log.d("Ok_Delta_asd", mainViewModel.inteData.toString())
                     Navigation.gotoFavorite(navController)
                     true
                 }
@@ -51,13 +48,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        CoroutineScope(Dispatchers.Default).launch(Dispatchers.Default){
+        CoroutineScope(Dispatchers.Default).launch(Dispatchers.Default) {
             for (i in (1..1000)) {
                 async {
-                    doSomething(i * 2L )
-                   /* withContext(Dispatchers.IO) {
-                        doSomething(i * 2L)
-                    }*/
+                    doSomething(i * 2L)
+                    /* withContext(Dispatchers.IO) {
+                         doSomething(i * 2L)
+                     }*/
                 }
             }
             doSomethingMore(5000L)
@@ -84,6 +81,3 @@ class MainActivity : AppCompatActivity() {
         Log.d("Ok_MORE_POST ${Thread.currentThread()}", int.toString())
     }
 }
-
-val Context.activityComp: ActivityComponent get() = (this as MainActivity).mainActivityComponent
-

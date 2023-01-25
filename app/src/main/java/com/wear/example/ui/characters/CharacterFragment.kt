@@ -1,6 +1,5 @@
 package com.wear.example.ui.characters
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,52 +9,35 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.scope.FragmentScope
 import com.wear.example.databinding.FragmentCharactersBinding
 import com.wear.example.di.NumberTwo
-import com.wear.example.di.fragment.FragmentComponent
-import com.wear.example.ui.activityComp
 import com.wear.example.ui.characters.dialog_fragment.CharacterDialogFragment
 import com.wear.example.ui.characters.recycler.RecyclerAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import javax.inject.Provider
 
+@AndroidEntryPoint
 class CharacterFragment : Fragment(),
     CharacterDialogFragment.ListenerDialogFragment {
 
-    companion object {
-
-        lateinit var fragmentComponent: FragmentComponent
-    }
-
-    @Inject
     lateinit var binding: FragmentCharactersBinding
 
     @Inject
     @NumberTwo
     lateinit var integer: Provider<Int>
 
-    private val viewModel: CharacterViewModel by viewModels {
-        fragmentComponent.injectFactoryViewModelCharacter()
-    }
-
-    override fun onAttach(context: Context) {
-        Log.d("CHARACTER_FRAGMENT_1", "$this")
-        Log.d("ATTACHED_FRAGMENT", "ATTACHED_FRAGMENT")
-        with(context) {
-            fragmentComponent = activityComp.fragmentComponentFactory().create(this@CharacterFragment)
-        }
-        super.onAttach(context)
-    }
+    private val viewModel: CharacterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        fragmentComponent.injectFragmentCharacter(this)
+    ): View{
+        binding = FragmentCharactersBinding.inflate(layoutInflater)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -70,6 +52,7 @@ class CharacterFragment : Fragment(),
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+
         viewModel.data.observe(viewLifecycleOwner, Observer {
             binding.swipeToRefresh.isRefreshing = false
 
@@ -82,7 +65,7 @@ class CharacterFragment : Fragment(),
             showLoadingLayout(false)
             binding.recyclerViewCharacters.apply {
                 layoutManager = LinearLayoutManager(requireContext())
-                adapter = RecyclerAdapter(requireContext(), it.results, childFragmentManager)
+                adapter = RecyclerAdapter(requireContext(), it.results, childFragmentManager,this@CharacterFragment)
             }
 
         })

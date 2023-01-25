@@ -19,7 +19,9 @@ class Navigation {
         }
 
         fun gotoMainActivity(context: Context) {
-            context.startActivity(Intent(context, MainActivity::class.java))
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("count", 23)
+            context.startActivity(intent)
         }
 
     }

@@ -2,8 +2,11 @@ package com.wear.example.di.app
 
 import com.example.networking.NetworkingModule
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module(includes = [NetworkingModule::class])
+@InstallIn(SingletonComponent::class)
 class NetworkModule {
 
 /*
@@ -20,7 +23,7 @@ class NetworkModule {
     }
 
     @Provides
-    @ApplicationScope
+    @Singleton
     fun provideRetrofitInstance(client: OkHttpClient): Retrofit {
         return Retrofit.Builder().baseUrl("https://rickandmortyapi.com/api/character/")
             .addConverterFactory(GsonConverterFactory.create()).client(client).build()

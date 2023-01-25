@@ -1,23 +1,22 @@
 package com.wear.example.data.data_source
 
-import android.content.Context
 import android.util.Log
-import com.example.scope.FragmentScope
-import com.wear.example.R
+import com.example.networking.NetworkingConfiguration
 import com.wear.example.data.model.ApiResponseRickAndMorty
 import com.wear.example.di.NumberOne
 import com.wear.example.model.data_source.RickAndMortyDataSource
 import com.wear.example.network.Api
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.delay
 import retrofit2.Retrofit
 import java.lang.Thread.sleep
 import javax.inject.Inject
 import javax.inject.Provider
 
-@FragmentScope
+@ViewModelScoped
 class RickAndMortyDataSourceImpl @Inject constructor(
-    private val context: Context,
-    @NumberOne private val page: Provider<Int>
+    @NumberOne private val page: Provider<Int>,
+    private val networkingConfiguration: NetworkingConfiguration
 ) :
     RickAndMortyDataSource {
 
@@ -42,7 +41,7 @@ class RickAndMortyDataSourceImpl @Inject constructor(
 
         Log.d("RETROFIT_INSTANCE", "$retrofit")
         val response = retrofit.create(Api::class.java)
-            .getCharacters(context.getString(R.string.base_url_rick_and_morty), query = queryMap)
+            .getCharacters(networkingConfiguration.serverBaseUrl, query = queryMap)
         delay(1000L)
         return if (response.isSuccessful) response.body() else null
 

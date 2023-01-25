@@ -20,7 +20,8 @@ import com.wear.example.ui.characters.dialog_fragment.CharacterDialogFragment
 class RecyclerAdapter(
     private val context: Context,
     private val dataSet: List<ResultsItem?>?,
-    private val parentFragment: FragmentManager
+    private val parentFragment: FragmentManager,
+    private val listenerDialogFragment: CharacterDialogFragment.ListenerDialogFragment
 ) :
     RecyclerView.Adapter<RecyclerViewHolder>() {
 
@@ -51,7 +52,7 @@ class RecyclerAdapter(
             }
 
             holder.container.setOnClickListener {
-                CharacterDialogFragment(resultItem).show(parentFragment, DIALOG_FRAGMENT_CHARACTER)
+                CharacterDialogFragment(resultItem,listenerDialogFragment).show(parentFragment, DIALOG_FRAGMENT_CHARACTER)
             }
         }
     }

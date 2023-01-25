@@ -6,25 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDialogFragment
 import com.bumptech.glide.Glide
-import com.wear.example.App
 import com.wear.example.R
 import com.wear.example.data.model.ResultsItem
 import com.wear.example.databinding.DialogFragmentCharacterBinding
-import com.wear.example.ui.characters.CharacterFragment
 import javax.inject.Inject
 
-
-class CharacterDialogFragment(private val resultItem: ResultsItem) : AppCompatDialogFragment() {
+class CharacterDialogFragment(
+    private val resultItem: ResultsItem,
+    private val listenerDialogFragment: ListenerDialogFragment
+) : AppCompatDialogFragment() {
 
     interface ListenerDialogFragment {
         fun closeDialogFragment(characterDialogFragment: CharacterDialogFragment)
     }
 
-    @Inject
     lateinit var binding: DialogFragmentCharacterBinding
 
-    @Inject
-    lateinit var listenerDialogFragment: ListenerDialogFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +33,7 @@ class CharacterDialogFragment(private val resultItem: ResultsItem) : AppCompatDi
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        CharacterFragment.fragmentComponent.injectCharacterDialogFragment(this)
+        binding = DialogFragmentCharacterBinding.inflate(inflater)
         return binding.root
     }
 
@@ -45,7 +42,7 @@ class CharacterDialogFragment(private val resultItem: ResultsItem) : AppCompatDi
 
         Glide.with(view.context).load(resultItem.image.orEmpty())
             .placeholder(R.drawable.ic_round_character).into(binding.ivImageCharacterDialogFragment)
-        binding.tvNameCharacterDialogFragment.text = App.applicationComponent.getApplication().getString(
+        binding.tvNameCharacterDialogFragment.text = view.context.getString(
             R.string.name_character_dialog_fragment,
             resultItem.name.orEmpty()
         )

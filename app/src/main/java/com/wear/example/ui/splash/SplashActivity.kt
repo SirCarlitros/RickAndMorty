@@ -5,14 +5,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.wear.example.applicationComponent
 import com.wear.example.databinding.ActivitySplashBinding
 import com.wear.example.navigation.Navigation
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
     @Inject
@@ -20,13 +20,6 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-        application.applicationComponent
-            .activityComponentBuilder()
-            .activity(this)
-            .build()
-            .injectSplashActivity(this)
 
         //DaggerActivityComponent.factory().create(this, this.application.applicationComponent).injectSplashActivity(this)
         window.setFlags(
@@ -37,9 +30,9 @@ class SplashActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val lista = mutableListOf(1,2,3)
+        val lista = mutableListOf(1, 2, 3)
         val listab = lista.add(4)
-        Log.d("HOLA","HOLA")
+        Log.d("HOLA", "HOLA")
         print(listab)
 
         Handler(Looper.getMainLooper()).postDelayed({
