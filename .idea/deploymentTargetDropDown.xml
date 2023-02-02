@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\USER\.android\avd\Nexus_5X_API_30.avd" />
+            <value value="$USER_HOME$/.android/avd/Zte_Blade_L8_API_24.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-01-12T04:26:25.377453Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-01-26T19:16:40.868328Z" />
   </component>
 </project>
