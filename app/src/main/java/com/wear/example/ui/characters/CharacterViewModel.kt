@@ -12,7 +12,7 @@ import javax.inject.Inject
 class CharacterViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val repositoryImpl: RickAndMortyRepository
-) : ViewModel(), LifecycleObserver {
+) : ViewModel() {
 
     private val _data = MutableLiveData<ApiResponseRickAndMorty?>(null)
     val data: LiveData<ApiResponseRickAndMorty?> get() = _data

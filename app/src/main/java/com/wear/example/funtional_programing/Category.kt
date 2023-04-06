@@ -19,9 +19,10 @@ val functionBC: (String) -> Long = { it.toLong() }
 val functionAC = functionBC after functionAB
 val functionAC2 = functionAB compose functionBC
 
+
 fun main() {
+
     println("The result is ${functionAC(10)}")
     println("The result is function 2 ${functionAC2(10)}")
-
-    NonZero
 }
+
